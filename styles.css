@@ -1,0 +1,144 @@
+/* Estilos Generales */
+/*Establece la fuente del texto en la página*/
+/*margin: 0; y padding: 0;: Elimina los márgenes y el relleno predeterminados del body*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*background-color: Asigna un color de fondo del encabezado.
+color: Establece el color del texto.
+text-align: Centra el texto dentro del encabezado.
+padding: 1rem;: Agrega un relleno de 1 rem alrededor del contenido del encabezado.*/
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/*display: flex;: Configura el contenedor de la sección para usar Flexbox, que permite una distribución 
+flexible de los artículos dentro de la sección.
+flex-wrap: wrap;: Permite que los elementos dentro del contenedor se envuelvan en múltiples líneas 
+si no hay suficiente espacio en una sola línea.
+gap: 1rem;: Define un espacio de 1 rem entre los elementos flexibles.
+padding: 1rem;: Agrega un relleno interno de 1 rem al contenedor de la sección.*/
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    
+}
+
+/*flex: 1;: Permite que los artículos crezcan y se encojan para llenar el espacio disponible de manera 
+equitativa.
+min-width: 250px;: Establece un ancho mínimo de 250 píxeles para cada artículo.
+border: 1px solid #ddd;: Agrega un borde gris claro alrededor de los artículos.
+border-radius: 8px;: Redondea las esquinas del borde del artículo.
+overflow: hidden;: Asegura que el contenido que se desborda del artículo sea ocultado.
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);: Aplica una sombra ligera para darle un efecto de profundidad.
+background-color: #fff;: Establece el color de fondo blanco para el artículo.
+padding: 1rem;: Agrega un relleno interno de 1 rem dentro del artículo.*/
+article {
+    flex: 1;
+    min-width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 1rem;
+}
+
+/*h1 y h2: Establecen el tamaño de fuente para los títulos principales y secundarios, respectivamente.
+margin-top: 0; en h2: Elimina el margen superior predeterminado del título secundario.
+font-size: 1rem; en p: Define el tamaño de fuente del párrafo.
+line-height: 1.6;: Mejora la legibilidad al aumentar el espacio entre líneas del párrafo.*/
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/*max-width: 100%; en img: Asegura que las imágenes no excedan el ancho del contenedor, haciéndolas responsivas.
+height: auto;: Mantiene la proporción original de la imagen.
+border-radius: 4px;: Redondea ligeramente las esquinas de las imágenes.*/
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;/* Asegúrate de que la imagen sea un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.imagen {
+    border-radius: 15px; /* Ajusta el valor según tus necesidades */
+}
+
+.imagen1 {
+    width: 250px; /* Ajusta el tamaño según tus necesidades */
+    height: 250px; /* Asegúrate de que el ancho y alto sean iguales */
+    border-radius: 50%; /* Esto hace que la imagen sea circular */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor sin deformarla */
+
+}
+/*padding: 1rem;: Agrega un relleno interno de 1 rem al pie de página.
+position: relative;: Permite que el pie de página se coloque en relación con el flujo normal del documento.
+bottom: 0; y width: 100%;: Asegura que el pie de página esté alineado al fondo de la página y ocupe todo el ancho disponible.*/
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries */
+/*@media (max-width: 599px): Aplica estilos cuando el ancho de la pantalla es de 599 píxeles o menos.
+flex-direction: column;: Cambia la disposición de los artículos a una columna, apilándolos verticalmente.*/
+@media (max-width: 599px) {
+    section {
+        flex-direction: column;
+    }
+}
+
+/*@media (min-width: 600px) and (max-width: 899px): Aplica estilos cuando el ancho de la pantalla está 
+entre 600 y 899 píxeles.
+flex-direction: row;: Dispone los artículos en una fila.
+flex: 1 1 calc(50% - 1rem);: Cada artículo ocupa aproximadamente el 50% del ancho del contenedor menos un espacio de 1 rem para el margen.*/
+
+@media (min-width: 600px) and (max-width: 899px) {
+    section {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    article {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+/*@media (min-width: 900px): Aplica estilos cuando el ancho de la pantalla es de 900 píxeles o más.
+flex: 1 1 calc(33.333% - 1rem);: Cada artículo ocupa aproximadamente el 33.333% del ancho del contenedor
+menos un espacio de 1 rem para el margen, distribuyendo tres columnas de artículos en pantallas grandes.*/
+@media (min-width: 900px) {
+    section {
+        flex-direction: row;
+    }
+    article {
+        flex: 1 1 calc(30% - 1rem);
+    }
+}
+
